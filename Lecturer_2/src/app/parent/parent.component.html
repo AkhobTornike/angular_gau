@@ -1,0 +1,20 @@
+<hr>
+<p>interpolation</p>
+{{name}}
+
+<hr>
+<p>normal</p>
+<p class="bg">hello</p>
+<hr>
+<p>property binding</p>
+<p [className]="className">hello</p>
+
+
+<button [className]="vanishButton" (click)="changeColor()">CHANGE</button>
+
+<hr>
+<input type="text" [(ngModel)]="myText">
+<p>{{myText}}</p>
+
+<app-child [parentData]="myText"></app-child>
+<app-child [parentData]="myText" (sentMessage)="getMessage($event)"></app-child>

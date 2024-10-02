@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    margin: auto;
+    width: 80vh;
+    height: 80vh;
+    background-color: rgb(17, 150, 121);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* header */
+.header h1{
+    /* text-align: center; */
+    font-size: 3rem;
+    color: black;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.default{
+    color: grey;
+}
+
+.hightnumber{
+    color: green;
+}
+
+.lownumber {
+    color: red;
+}

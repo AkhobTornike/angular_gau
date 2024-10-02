@@ -1,0 +1,25 @@
+.bg {
+    background-color: rgb(12, 72, 72);
+}
+
+.light_bg {
+    background-color: aqua;
+}
+
+.btn {
+    background-color: rgb(12, 72, 72);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.vanish_btn {
+    background-color: rgb(12, 72, 72);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: not-allowed;
+    border-radius: 5px;
+}
