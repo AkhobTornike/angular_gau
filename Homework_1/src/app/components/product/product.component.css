@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    margin: 20px 0px;
+    width: 1000px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    flex: 1;
+    max-width: 150px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-information-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.product-information-container h2,
+.product-information-container h3 {
+    margin: 0;
+}
+
+.product-information-container h3 {
+    text-decoration: underline;
+}
+
+.product-information-container p {
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #0091ff;
+    text-decoration: underline;
+}
+
+.product-price-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.product-price-container {
+    margin-bottom: 20px;
+}
+
+.product-price-container h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f2f2f2;
+}

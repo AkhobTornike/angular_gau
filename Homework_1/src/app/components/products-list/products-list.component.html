@@ -1,0 +1,7 @@
+<div *ngFor="let product of products" [ngClass]="isDetailVisible? 'container-blur' : 'container'">
+        <app-product [product]="product" (productSelected)="onProductSelected($event)"></app-product>
+</div>
+
+<div class="container-detail" *ngIf="selectedProduct">
+        <app-product-details [productSelected]="selectedProduct"  (closeDetails)="hideProductDetails()"></app-product-details>
+</div>

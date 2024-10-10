@@ -1,0 +1,20 @@
+<div class="product-detail-container">
+    <div class="top-sector">
+      <div class="image-container">
+        <img [src]="productSelected.image" alt="{{productSelected.title}}">
+      </div>
+      <div class="product-info-container">
+        <h2>{{productSelected.title}}</h2>
+        <h1 class="product-price">{{productSelected.price}}</h1>
+      </div>
+    </div>
+  
+    <div class="middle-sector">
+      <p>{{productSelected.description}}</p>
+    </div>
+  
+    <div class="bottom-sector">
+      <button (click)="cancelDetailView()">Cancel</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,4 @@
+<p *ngFor="let item of currentPage; let isLast = last">
+    <span>{{ item }}</span>
+    <span *ngIf="!isLast"> > </span>
+</p>
