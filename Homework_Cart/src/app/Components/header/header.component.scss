@@ -1,0 +1,89 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+  
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      color: #4a8aff;
+  
+      .icon-shopping-bag {
+        margin-right: 8px;
+        font-size: 24px;
+      }
+    }
+  
+    .search-bar {
+      display: flex;
+      align-items: center;
+  
+      input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+  
+      select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+  
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+  
+      .icon {
+        cursor: pointer;
+        color: #777;
+        font-size: 14px;
+  
+        &:hover {
+          color: #000;
+        }
+  
+        &.profile::before {
+          content: '👤';
+          margin-right: 6px;
+        }
+  
+        &.message::before {
+          content: '💬';
+          margin-right: 6px;
+        }
+  
+        &.orders::before {
+          content: '❤️';
+          margin-right: 6px;
+        }
+  
+        &.cart::before {
+          content: '🛒';
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  
