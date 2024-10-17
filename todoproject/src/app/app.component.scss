@@ -1,0 +1,24 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+  }
+  
+  .app-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #ff6f61;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 50px;
+  }
+  
+  .sidebar {
+    width: 200px;
+  }
+  
+  .task-list {
+    flex: 1;
+  }
+  

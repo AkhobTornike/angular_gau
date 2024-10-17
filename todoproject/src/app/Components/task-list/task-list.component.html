@@ -1,0 +1,16 @@
+<div class="task-list">
+    <h2>All Tasks</h2>
+    <div class="task-input">
+      <input 
+        type="text"
+        [(ngModel)]="searchQuery"
+        (input)="getTasks()"
+        placeholder="Add a new task inside 'All' category" />
+    </div>
+    <ul>
+      <li *ngFor="let task of tasks">
+        <app-task-item [task]="task" (taskDeleted)="onTaskDeleted($event)"></app-task-item>
+      </li>
+    </ul>
+  </div>
+  
