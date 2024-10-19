@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Registration Time</th>
+        <th>Last Login</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td> <a [routerLink]="['/home', 'view', user.id]">{{ user.id }}</a></td>
+        <td> <a [routerLink]="['/home', 'view', user.id]">{{ user.username }}</a></td>
+        <td> <a [routerLink]="['/home', 'view', user.id]">{{ user.email }}</a></td>
+        <td> <a [routerLink]="['/home', 'view', user.id]">{{ user.registrationTime | date : "yyyy-MM-dd" }}</a></td>
+        <td> <a [routerLink]="['/home', 'view', user.id]">{{ user.lastLoginTime | date : "yyyy-MM-dd" }}</a></td>
+        <td> <a [routerLink]="['/home', 'view', user.id]" [ngClass]="user.status === 'Confirmed'? 'green' : 'red'">{{ user.status }}</a></td>
+      </tr>
+    </tbody>
+  </table>

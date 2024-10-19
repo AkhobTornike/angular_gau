@@ -1,0 +1,31 @@
+
+table,
+thead,
+tbody,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+tbody tr td:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

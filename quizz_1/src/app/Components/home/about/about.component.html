@@ -1,0 +1,34 @@
+<div [ngClass]="user? 'user-details' : 'user-detailes blur'">
+  <h2>User Details</h2>
+
+  <ul>
+    <li>
+      <b>ID:</b> {{ user.id }}
+    </li>
+    <li>
+      <b>Username:</b> {{ user.username }}
+    </li>
+    <li>
+      <b>Email:</b> {{ user.email }}
+    </li>
+    <li>
+      <b>Registration Time:</b> {{ user.registrationTime | date : "medium" }}
+    </li>
+    <li>
+      <b>Last Login Time:</b> {{ user.lastLoginTime | date : "medium" }}
+    </li>
+    <li>
+      <b>Status:</b> {{ user.status }}
+    </li>
+  </ul>
+
+  <div class="button-container">
+    <button (click)="goBack()" class="go-back-button">Back</button>
+  </div>
+</div>
+
+<div [ngClass]="user? 'hidden' : 'error-window'" class="error-window">User Does not Exist
+  <div class="button-container">
+    <button (click)="goBack()" class="go-back-button">Back</button>
+  </div>
+</div>
