@@ -1,0 +1,84 @@
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    thead {
+        background-color: #4CAF50;
+        color: #fff;
+        text-align: left;
+        
+        th {
+            padding: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            &:hover {
+                background-color: #f1f1f1;
+                cursor: pointer;
+            }
+
+            td {
+                padding: 12px;
+                border-bottom: 1px solid #ddd;
+                
+                &:first-child {
+                    font-weight: 500;
+                }
+
+                &:nth-last-child(2) {
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    width: max-content;
+                    height: max-content;
+
+                    &.pending {
+                        background-color: #FFA500;
+                        box-shadow: 0 0 0 2px #FFA500;
+                    }
+
+                    &.paid {
+                        background-color: #4CAF50;
+                        box-shadow: 0 0 0 2px #4CAF50;
+                    }
+
+                    &.canceled {
+                        background-color: #f44336;
+                        box-shadow: 0 0 0 2px #f44336;
+                    }
+                }
+
+                &:last-child {
+                    text-align: center;
+                    width: 100px;
+                    font-weight: 600;
+                    color: black;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: #45a049;
+                    }
+                }
+            }
+        }
+    }
+}

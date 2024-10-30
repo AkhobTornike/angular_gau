@@ -4,27 +4,32 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Product } from '../../Interface/product.interface';
 import { ProductsService } from '../../Services/products.service';
-import { ProductComponent } from "../product/product.component";
-import { ProductDetailsComponent } from "../product-details/product-details.component";
+import { ProductComponent } from '../product/product.component';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 @Component({
   selector: 'app-products-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ProductComponent, ProductDetailsComponent],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    ProductComponent,
+    ProductDetailsComponent,
+  ],
   templateUrl: './products-list.component.html',
-  styleUrl: './products-list.component.css'
+  styleUrl: './products-list.component.css',
 })
 export class ProductsListComponent {
-  products: Product[] = []
+  products: Product[] = [];
   public isDetailVisible: boolean = false;
   public selectedProduct: Product | null = null;
 
-  constructor(private ProductsService: ProductsService) { }
+  constructor(private ProductsService: ProductsService) {}
 
   ngOnInit(): void {
     this.ProductsService.GetAllProducts().subscribe((products) => {
-      this.products = products
-    })
+      this.products = products;
+    });
   }
 
   onProductSelected(product: Product): void {
@@ -38,6 +43,4 @@ export class ProductsListComponent {
     this.isDetailVisible = false;
     this.selectedProduct = null;
   }
-
-  
 }
