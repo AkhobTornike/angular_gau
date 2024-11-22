@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="logo">
+    <img src="/public/logo-w.png/"/>
+    <span>nicepage</span>
+  </div>
+  <div class="controls">
+    <button class="control-button desktop" data-component="xl" (click)="changeResponsive('desktop', 'xl')">
+      <i class="fa-solid fa-desktop"></i>
+    </button>
+    <button class="control-button laptop" data-component="l" (click)="changeResponsive('laptop', 'l')">
+      <i class="fa-solid fa-laptop"></i>
+    </button>
+    <button class="control-button tablet" data-component="m" (click)="changeResponsive('tablet', 'm')">
+      <i class="fa-solid fa-tablet-button"></i>
+    </button>
+    <button class="control-button horizontal tablet-h" data-component="s" (click)="changeResponsive('tablet-h', 's')">
+      <i class="fa-solid fa-tablet-button"></i>
+    </button>
+    <button class="control-button mobile" data-component="xs" (click)="changeResponsive('mobile', 'xs')">
+      <i class="fa-solid fa-mobile-button"></i>
+    </button>
+  </div>
+  <button class="close-button">×</button>
+</header>

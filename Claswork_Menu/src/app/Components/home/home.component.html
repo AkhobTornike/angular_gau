@@ -1,0 +1,19 @@
+<div class="home">
+  <h1 class="title">Practical Plans</h1>
+  <p class="subtitle">DUIS AUTE IRURE DOLOR IN REPREHENDERIT</p>
+</div>
+
+<div [ngClass]="['content', selectedSize]">
+  <div class="nav-div">
+    <app-navbar (componentSelected)="onComponentSelected($event)"></app-navbar>
+  </div>
+  <div class="cont-div">
+    <ng-container [ngSwitch]="selectedComponent">
+      <app-detailes *ngSwitchCase="'details'"></app-detailes>
+      <app-shipping *ngSwitchCase="'shipping'"></app-shipping>
+      <app-reviews *ngSwitchCase="'reviews'" (componentSelected)="onComponentSelected($event)"></app-reviews>
+      <app-questions *ngSwitchCase="'questions'" (componentSelected)="onComponentSelected($event)"></app-questions>
+      <p *ngSwitchDefault>Select an option from the navbar.</p>
+    </ng-container>
+  </div>
+</div>

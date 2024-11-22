@@ -1,0 +1,36 @@
+.question-section {
+    background-color: #828b96;
+    color: #ffffff; 
+    font-family: Arial, sans-serif;
+    text-align: center; 
+    padding: 20px;
+  
+    .description {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  
+    .question-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #ffffff; 
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+  
+      .icon {
+        margin-right: 8px; 
+        font-size: 18px;
+      }
+  
+      &:hover {
+        background-color: #e6e6e6;
+      }
+    }
+  }
+  
