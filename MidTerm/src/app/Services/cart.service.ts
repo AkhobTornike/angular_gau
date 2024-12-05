@@ -6,11 +6,14 @@ import { Products } from '../Interface/products';
 })
 export class CartService {
   private cart: Products[] = [];
+  private totalPrice: number = 0;
 
   constructor() { }
 
   addToCart(product: Products) {
     this.cart.push(product);
+    this.totalPrice += product.price;
+    console.log(this.totalPrice)
   }
 
   deleteFromCart(product: Products) {
@@ -19,5 +22,8 @@ export class CartService {
 
   getCart(): Products[] {
     return this.cart;
+  }
+  getTotalPrice(): number {
+    return this.totalPrice;
   }
 }

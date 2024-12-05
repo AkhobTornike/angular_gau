@@ -1,0 +1,41 @@
+.container {
+    margin-top: 30px;
+    .review-card {
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      
+        .stars {
+          color: #ffc107;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      
+        .reviewer {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+      
+          .verified {
+            margin-left: 8px;
+            font-size: 14px;
+            color: #4caf50; 
+          }
+        }
+      
+        .testimonial {
+          font-size: 14px;
+          color: #555;
+          font-style: italic;
+          margin: 0;
+        }
+      }
+      
+}
