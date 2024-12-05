@@ -7,7 +7,7 @@ export interface Product {
     backImage: string;
     manequenImage: string;
     category: string;
-    assessment: Float32Array;
+    reviewsIDs: number[];
     sizes: string[];
     colors: string[];
     isDiscounted: boolean;

@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { Product } from '../../Interface/product';
 import { DressStyleComponent } from "./dress-style/dress-style.component";
 import { ReviewsComponent } from "./reviews/reviews.component";
+import { Review } from '../../Interface/review';
+import { ReviewsService } from '../../Services/reviews.service';
 
 @Component({
   selector: 'app-home',
@@ -18,19 +20,38 @@ export class HomeComponent implements OnInit {
   public newArrivalsProducts: Product[] = [];
   public topSellingsProducts: Product[] = [];
 
-  constructor(private productsService: ProductsService) {}
+  public reviews: Review[] = [];
+
+  constructor(
+    private productsService: ProductsService,
+    private reviewsService: ReviewsService
+  ) {}
 
   ngOnInit(): void {
     this.newArrivalsProducts = this.productsService.getProducts().slice(0, 4);
-    this.topSellingsProducts = this.productsService.getProducts().filter(product => product.assessment[0] >= 4.5).slice(0, 4);
   }
 
-  getAssessmentValue(assessment: Float32Array): number {
-    return assessment[0]; // Get the first value of the Float32Array
+  getAssessmentValue(product: Product): number {
+    if (product.reviewsIDs.length === 0) {
+      return 0;
+    }
+
+    let totalRating = 0 ;
+    let count = 0;
+
+    product.reviewsIDs.forEach(reviewId => {
+      this.reviews = this.reviewsService.getReviewsByIds(reviewId);
+      totalRating += Number(this.reviews[0].stars);
+      count++;
+    });
+    console.log(product.name);
+
+    const averageRating = count > 0 ? totalRating / count : 0;
+    return parseFloat(averageRating.toFixed(1));
   }
 
   getStars(rating: number): number[] {
-    return Array(Math.round(rating)).fill(0); // Generate star icons dynamically
+    return Array(Math.round(rating)).fill(0);
   }
 
 }
