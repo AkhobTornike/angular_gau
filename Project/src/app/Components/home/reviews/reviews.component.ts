@@ -1,41 +1,57 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Review } from '../../../Interface/review';
 import { ReviewsService } from '../../../Services/reviews.service';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../../Services/user.service';
 
 @Component({
   selector: 'app-reviews',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './reviews.component.html',
-  styleUrl: './reviews.component.scss'
+  styleUrls: ['./reviews.component.scss']
 })
-export class ReviewsComponent implements OnInit{
+export class ReviewsComponent implements OnInit {
   public reviews: Review[] = [];
+  
+  @ViewChild('scrollContainer', { static: true }) scrollContainer!: ElementRef;
 
-  constructor(private reviewsService: ReviewsService) {}
+  constructor(
+    private reviewsService: ReviewsService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    this.reviews = this.reviewsService.getReviews();
-    this.reviews.forEach(review => {
-      console.log('Review ID:', review.reviewID, 'Stars:', review.stars);
+    this.reviews = this.reviewsService.getReviews().filter((review) => Number(review.stars) > 4.5);
+  }
+
+  scrollLeft(): void {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: -300,
+      behavior: 'smooth'
     });
   }
-  
-  
 
-  getStars(starsArray: Float32Array): number[] {
-    if (!starsArray || starsArray.length === 0) {
-      return []; // Return an empty array if starsArray is null or empty
-    }
-  
-    const rating = starsArray[0]; // Extract the first element of the Float32Array
-    if (isNaN(rating) || rating <= 0) {
-      return []; // Return an empty array for invalid or zero ratings
-    }
-  
-    return Array(Math.round(rating)).fill(0); // Safely create the array for star rendering
+  scrollRight(): void {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: 300,
+      behavior: 'smooth'
+    });
   }
+
+  getStars(stars: Float32Array | number): number[] {
+    let rating: number;
   
+    if (stars instanceof Float32Array) {
+      rating = stars.length > 0 ? stars[0] : 0;
+    } else {
+      rating = stars;
+    }
   
+    return Array(Math.round(rating)).fill(0);
+  }
+
+  getReviewUserName(userID: number): string {
+    return this.userService.getUserByID(userID).userName;
+  }
 }

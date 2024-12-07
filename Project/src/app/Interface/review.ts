@@ -4,6 +4,6 @@ export interface Review {
     reviewID: number;
     userID: number;
     createDateTime: string;
-    stars: Float32Array;
+    stars: number | Float32Array;
     comment: string;
 }

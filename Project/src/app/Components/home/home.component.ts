@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
       totalRating += Number(this.reviews[0].stars);
       count++;
     });
-    console.log(product.name);
 
     const averageRating = count > 0 ? totalRating / count : 0;
     return parseFloat(averageRating.toFixed(1));
