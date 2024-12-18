@@ -1,0 +1,14 @@
+<div *ngFor="let user of users">
+    <div>
+      <img [src]="user.imageUrl" alt="{{ user.firstName }} {{ user.lastName }}">
+      <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+      <p>Email: {{ user.email }}</p>
+      <p>Role: {{ user.role }}</p>
+
+      <button (click)="updateUser(user.id)">Update</button>
+      <button (click)="deleteUser(user.id)">Delete</button>
+
+      <h3>{{message}}</h3>
+    </div>
+    <hr>
+  </div>
